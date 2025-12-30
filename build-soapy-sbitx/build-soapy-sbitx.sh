@@ -25,7 +25,7 @@ printf "This script will do a bunch of things you may or may not want:
 "
 read -rp "Do you want to continue? (y/n): " a && [[ "$a" == "y" ]] || exit 1
 
-set -ex
+set -x
 
 # get up to date
 # this takes a long time if you haven't done it before
@@ -37,11 +37,14 @@ sudo apt update && sudo apt -y upgrade
 echo "Pre-Reqs"
 sudo apt install -y libi2c-dev soapysdr-tools libsoapysdr-dev \
   gqrx-sdr libgnuradio-hpsdr1.0.0 libgnuradio-limesdr3.0.1 \
-  pavucontrol sysvbanner 
+  pavucontrol sysvbanner  || true
 
 # remove xtrx-dkms since it's broken, then clean up
 sudo apt remove -y xtrx-dkms || true
 sudo apt autoremove -y || true
+
+# fail on error from here on
+set -ex
 
 # make a new place to put this stuff and go there
 mkdir -p ${TOP}
