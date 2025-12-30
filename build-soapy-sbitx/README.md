@@ -1,10 +1,9 @@
-# build-soapy-sbitx
+# build-soapy-sbitx -- ⚠️ **EXPERIMENTAL** ⚠️
 
 Script to build and/or install Soapy components for sbitx as well as few Soapy clients:
 - gqrx
 - CubicSDR
 - pihpsdr (currently, g0orx version)
-
 
 ## Prerequsites
 - I start with a freshly installed copy of [the 64-bit team's sbitx image](https://github.com/drexjj/sbitx/releases), and you probably should too.
