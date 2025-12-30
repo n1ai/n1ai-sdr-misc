@@ -7,7 +7,7 @@ Script to build and/or install Soapy components for sbitx as well as few Soapy c
 
 
 ## Prerequsites
-- I start with a freshly installed copy of [JJ's sbitx image](https://github.com/drexjj/sbitx/releases), and you probably should too.
+- I start with a freshly installed copy of [the 64-bit team's sbitx image](https://github.com/drexjj/sbitx/releases), and you probably should too.
 - As per that link, make sure you use Backup Manager to save any important stuff off that image first
 
 ## Running The Script
