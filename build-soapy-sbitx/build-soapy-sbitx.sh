@@ -11,7 +11,7 @@
 TOP=${HOME}/code/soapy-sbitx 
 export TOP
 
-banner "Attention"
+echo "Attention"
 printf "This script will do a bunch of things you may or may not want:
   • It will update all the core Debian packages on the system \n\
   • it will make a new build directory at:\n\
@@ -29,12 +29,12 @@ set -ex
 
 # get up to date
 # this takes a long time if you haven't done it before
-banner "OS Updates"
+echo "OS Updates"
 sudo apt update && sudo apt -y upgrade
 
 # install initial dependencies/tools
 # this also takes a long time since gqrx has a lot of dependencies
-banner "Pre-Reqs"
+echo "Pre-Reqs"
 sudo apt install -y libi2c-dev soapysdr-tools libsoapysdr-dev \
   gqrx-sdr libgnuradio-hpsdr1.0.0 libgnuradio-limesdr3.0.1 \
   pavucontrol sysvbanner 
