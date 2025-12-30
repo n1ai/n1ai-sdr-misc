@@ -46,22 +46,26 @@ You will know when it is done when it outputs the following:
 
 When the script is done you will next start the sbtix_ctrl program.  This program controls the sbitx radio based on commands that come from the sbitx soapy library each of the SDR applications access.  The example below starts it in the background.  In the future this code will probably be build into the sbitx soapy library and won't be a standalone program any more.
 
+To start it, open a new Terminal window or Tab and type:
+
 ```bash
 /usr/local/bin/sbitx_ctrl &
 ```
+
+In a few seconds it should produce the output ```sbitx_ctrl listening on 127.0.0.1:9999```.  Leave that terminal window/tab open so it will continue to run.
 
 Next, run any of the following clients.  You should probably pick the one you are most familiar with.  You should also plan to test the app with a known good SDR such as RTLSDR first to be sure it works correctly, you get audio output, etc.
 
 ## Running PiHPSDR
 
 Some notes:
-1. There should be a PiHPSDR menu options now
-2. If not, then run ```/opt/pihpsdr/pihpsdr```
+1. There should be a *Hamradio -> PiHPSDR* option on the desktop main menu
+2. If not, then run ```/usr/local/bin/pihpsdr &``` from a Terminal window
 
 When it first comes up:
 1. Wait if/when it says it needs to build wisdom files, this takes a while
-1. If you only use sbitx then on the device selection screen go into protocols and uncheck protocols 1 and 2 so the next startup of the program is faster
-1. After you chose sbitx on the device selection screen, if you want audio then select Menu -> RX (Receive) and click on the local audio check box and then pick your sound device from the drop down -- in my case it's a usb sound card dongle to speakers
+1. If you only use sbitx then on the device selection screen go into protocols and uncheck protocols 1 and 2 and hit close so the next startup of the program is faster
+1. After you hit the start button next to sbitx on the device selection screen, if you want audio then select *Menu -> RX* (with Menu on the upper right) and click on the local audio check box and then pick your sound device from the drop down -- in my case it's a usb sound card dongle that is connected to speakers
 
 ## Running GQRX
 
