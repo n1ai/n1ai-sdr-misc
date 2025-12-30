@@ -6,8 +6,11 @@ Script to build and/or install Soapy components for sbitx as well as few Soapy c
 - pihpsdr (currently, g0orx version)
 
 
-## Running The Script
+## Prerequsites
+- I start with a freshly installed copy of [JJ's sbitx image](https://github.com/drexjj/sbitx/releases), and you probably should too.
+- As per that link, make sure you use Backup Manager to save any important stuff off that image first
 
+## Running The Script
 
 It's pretty simple.  Just download the `build-soapy-sbitx.sh`file by clicking on [this link](https://github.com/n1ai/n1ai-sdr-misc/blob/main/build-soapy-sbitx/build-soapy-sbitx.sh), then use the *Download Raw File* option on the top right (i.e. the download symbol) which will bring the file onto your computer.  If you do this with a browser running on sbitx it will end up in the *Downloads* folder but you can put it into any convenient folder.  
 
