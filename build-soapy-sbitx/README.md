@@ -8,20 +8,23 @@ Script to build and/or install Soapy components for sbitx as well as few Soapy c
 
 ## Running The Script
 
-It's pretty simple.  Just download the script to any convenient folder on your sibtx Pi and open a terminal window in that same folder.  
 
-You will need to answer a simple y/n question at the start, and if you do not have the SdrPlay API already installed, it will later ask you to accept its liense so be ready to answer some more simple y/N/ENTER questions.
+It's pretty simple.  Just download the `build-soapy-sbitx.sh`file by clicking on it above this text, then use the *Download Raw File* option on the top right (i.e. the download symbol) which will bring the file onto your computer.  If you do this with a browser running on sbitx it will end up in the *Downloads* folder but you can put it into any convenient folder.  
+
+Once the file is downloaded into any convenient folder on your sibtx Pi, open a terminal window in that same folder.  To do this on the sbitx Pi you can open *Accessories -> File Manager* from the main desktop menu, then navigate to the folder, then right click on that folder and choose *Open Terminal*.
+
+Once the script runs, will need to answer a simple y/n question at the start.  Also, if you do not have the SdrPlay API already installed, it will later ask you to accept its license so be ready to answer some more simple y/N/ENTER questions.
 
 To run it the first time, without capturing its output, just do:
 
 ```bash
-bash ./build-soapy-sbitx
+bash ./build-soapy-sbitx.sh
 ```
 
 If it fails, run it a second time capturing its output using the `tee` command:
 
 ```bash
-bash ./build-soapy-sbitx |& tee build-soapy-sbitx.log
+bash ./build-soapy-sbitx.sh |& tee build-soapy-sbitx.log
 ```
 
 ... then share the log file on Discord
