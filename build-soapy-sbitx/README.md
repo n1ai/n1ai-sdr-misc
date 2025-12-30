@@ -1,4 +1,5 @@
-# build-soapy-sbitx -- ⚠️ **EXPERIMENTAL** ⚠️
+# ⚠️ **EXPERIMENTAL** ⚠️ 
+# build-sbitx-soapy
 
 Script to build and/or install Soapy components for sbitx as well as few Soapy clients:
 - gqrx
