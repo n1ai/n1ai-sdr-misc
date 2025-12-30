@@ -69,14 +69,16 @@ When it first comes up:
 
 ## Running GQRX
 
+- GQRX starts slowly, especially the first time it is run
 - When gqrx starts, it will present I/O Devices selector for I/Q input 
 - Choose device "sBitx (ALSA IQ Bridge)" 
 - It fills in the device string "driver=sbitx,soapy=2"
 - Also pick your audio output device 
 - In my case I have a usb sound card dongle
 - Once the main window opens, use the toolbar play symbol to start the dsp
-- On the right pane, receiver tab: select AM/USB/whatever
+- On the right pane, Receiver tab: select AM/USB/whatever
 - On the right pane, FFT tab: there are lots of settings for the panadapter / waterfall including speed, color theme, gain, zoom, etc.
+- On the right pane, FFT tab: I need to lower the left *Pand. db* slider for it to show the noise floor
 - On the right pane, Audio window: if you have a signal tuned and a demodulator selected then you should see a audio waveform -- if not, check squelch settings in the receiver tab
 
 
