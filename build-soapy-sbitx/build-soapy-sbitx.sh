@@ -27,14 +27,16 @@ read -rp "Do you want to continue? (y/n): " a && [[ "$a" == "y" ]] || exit 1
 
 set -x
 
+sudo apt-install -y sysvbanner
+
 # get up to date
 # this takes a long time if you haven't done it before
-echo "OS Updates"
+banner "OS Updates"
 sudo apt update && sudo apt -y upgrade
 
 # install initial dependencies/tools
 # this also takes a long time since gqrx has a lot of dependencies
-echo "Pre-Reqs"
+banner "Pre-Reqs"
 sudo apt install -y libi2c-dev soapysdr-tools libsoapysdr-dev \
   gqrx-sdr libgnuradio-hpsdr1.0.0 libgnuradio-limesdr3.0.1 \
   pavucontrol sysvbanner  || true
@@ -56,20 +58,21 @@ banner "SbitxCtrl"
 pushd sbitx-core
 git switch sbitx_ctrl
 git pull
+make clean
 make sbitx_ctrl
 sudo make install_sbitx_ctrl
 popd
 
 # build SoapySBITX from the sbitx-ham-apps repo
-banner "SoapySbitx"
+banner "SoapySBITX"
 [ ! -d sbitx-ham-apps ] && git clone https://github.com/n1ai/sbitx-ham-apps
 pushd sbitx-ham-apps
 git switch level3_1227
 git pull
 pushd soapy2sbitx
-mkdir -p build
-cd build
-cmake ..
+rm -rf build
+mkdir -p build && cd build
+cmake .. |& tee cmake.log
 make -j2
 sudo make install
 sudo ldconfig
@@ -81,16 +84,16 @@ cd ..
 popd  ## soapy2sbitx
 popd  ## sbitx-ham-apps
 
-# install cubicsdr using the script from the sbitx-ham-apps repo
-# banner "CubicSDR"
-pushd sbitx-ham-apps
-bash -x ./install-cubicsdr.sh
-popd
-
 # build pihpdr using my version of jj's build script
 pushd ${TOP}/sbitx-ham-apps/
 banner "PiHPSDR"
 bash -x ./install-pihpsdr.sh
+popd
+
+# install cubicsdr using the script from the sbitx-ham-apps repo
+# banner "CubicSDR"
+pushd sbitx-ham-apps
+bash -x ./install-cubicsdr.sh
 popd
 
 banner "Done!"
