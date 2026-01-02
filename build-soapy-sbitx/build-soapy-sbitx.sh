@@ -38,7 +38,7 @@ sudo apt update && sudo apt -y upgrade
 # this also takes a long time since gqrx has a lot of dependencies
 banner "Pre-Reqs"
 sudo apt install -y libi2c-dev soapysdr-tools libsoapysdr-dev \
-  gqrx-sdr libgnuradio-hpsdr1.0.0 libgnuradio-limesdr3.0.1 \
+  gqrx-sdr quisk libgnuradio-hpsdr1.0.0 libgnuradio-limesdr3.0.1 \
   pavucontrol sysvbanner  || true
 
 # remove xtrx-dkms since it's broken, then clean up
